@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<extension key="at.greenpeace.bankingcustom" type="module">
+  <file>bankingcustom</file>
+  <name>Greenpeace Banking Customizations</name>
+  <description>Various Greenpeace-specific customizations for CiviBanking</description>
+  <license>AGPL-3.0</license>
+  <maintainer>
+    <author>Patrick Figel</author>
+    <email>pfigel@greenpeace.org</email>
+  </maintainer>
+  <urls>
+    <url desc="Main Extension Page">https://github.com/greenpeace-cee/at.greenpeace.bankingcustom</url>
+    <url desc="Documentation">https://github.com/greenpeace-cee/at.greenpeace.bankingcustom</url>
+    <url desc="Support">https://github.com/greenpeace-cee/at.greenpeace.bankingcustom/issues</url>
+    <url desc="Licensing">http://www.gnu.org/licenses/agpl-3.0.html</url>
+  </urls>
+  <releaseDate>2019-07-05</releaseDate>
+  <version>0.1-alpha.1</version>
+  <develStage>alpha</develStage>
+  <compatibility>
+    <ver>5.7</ver>
+  </compatibility>
+  <comments></comments>
+  <civix>
+    <namespace>CRM/Bankingcustom</namespace>
+  </civix>
+</extension>

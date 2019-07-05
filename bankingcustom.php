@@ -152,6 +152,6 @@ function bankingcustom_civicrm_banking_transaction_summary($banking_transaction,
 function bankingcustom_civicrm_pageRun(&$page) {
   $pageName = $page->getVar('_name');
   if ($pageName == 'CRM_Banking_Page_Review') {
-    CRM_Core_Resources::singleton()->addScriptFile('at.greenpeace.bankingcustom', 'js/change_contact_label.js');
+    CRM_Core_Resources::singleton()->addScriptFile('at.greenpeace.bankingcustom', 'js/change_contact_label.js', 0, 'html-header');
   }
 }

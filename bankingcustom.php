@@ -140,8 +140,8 @@ function bankingcustom_civicrm_entityTypes(&$entityTypes) {
  * @param $summary_blocks
  */
 function bankingcustom_civicrm_banking_transaction_summary($banking_transaction, &$summary_blocks) {
-  // $summary = new CRM_Bankingcustom_TransactionSummary($banking_transaction, $summary_blocks);
-  // $summary->modify();
+  $summary = new CRM_Bankingcustom_TransactionSummary($banking_transaction, $summary_blocks);
+  $summary->modify();
 }
 
 /**

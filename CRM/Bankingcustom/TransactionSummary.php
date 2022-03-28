@@ -20,15 +20,12 @@ class CRM_Bankingcustom_TransactionSummary {
       $template->assign('iban_contact_count', count($matchingContactIDs));
     }
 
-    $this->blocks['ReviewBasic'] = $template->fetch(
-      'CRM/Bankingcustom/TransactionSummary/ReviewBasic.tpl'
-    );
     $this->blocks['ReviewDebtor'] = $template->fetch(
       'CRM/Bankingcustom/TransactionSummary/ReviewDebtor.tpl'
     );
-    $this->blocks['ReviewTransaction'] = $template->fetch(
-      'CRM/Bankingcustom/TransactionSummary/ReviewTransaction.tpl'
-    );
+    $ruleMatchIndicators = new CRM_Banking_RuleMatchIndicators($this->transaction, $this->blocks);
+    $ruleMatchIndicators->addContactMatchIndicator();
+    $ruleMatchIndicators->addIbanMatchIndicator();
   }
 
   private static function getMatchingContactIDsForIBAN(string $iban): array {

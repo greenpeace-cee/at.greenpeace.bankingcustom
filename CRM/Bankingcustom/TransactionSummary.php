@@ -14,7 +14,7 @@ class CRM_Bankingcustom_TransactionSummary {
     $template = CRM_Core_Smarty::singleton();
     $partyBaRefs = $template->_tpl_vars['party_ba_references'];
 
-    if (count($partyBaRefs) > 0 && $partyBaRefs[0]['reference_type'] === 'IBAN') {
+    if (count($partyBaRefs ?? []) > 0 && $partyBaRefs[0]['reference_type'] === 'IBAN') {
       $iban = $partyBaRefs[0]['reference'];
       $matchingContactIDs = self::getMatchingContactIDsForIBAN($iban);
       $template->assign('iban_contact_count', count($matchingContactIDs));

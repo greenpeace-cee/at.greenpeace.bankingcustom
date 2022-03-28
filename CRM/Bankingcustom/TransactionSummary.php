@@ -13,9 +13,16 @@ class CRM_Bankingcustom_TransactionSummary {
   public function modify() {
     $template = CRM_Core_Smarty::singleton();
     $partyBaRefs = $template->_tpl_vars['party_ba_references'];
-
+    $iban = NULL;
     if (count($partyBaRefs ?? []) > 0 && $partyBaRefs[0]['reference_type'] === 'IBAN') {
       $iban = $partyBaRefs[0]['reference'];
+    }
+    elseif (!empty($template->_tpl_vars['party_account_ref']) && $template->_tpl_vars['party_account_reftype'] ?? '' == 'IBAN') {
+      // fallback for multi-match during analyze stage
+      $iban = $template->_tpl_vars['party_account_ref'];
+    }
+
+    if (!empty($iban)) {
       $matchingContactIDs = self::getMatchingContactIDsForIBAN($iban);
       $template->assign('iban_contact_count', count($matchingContactIDs));
     }

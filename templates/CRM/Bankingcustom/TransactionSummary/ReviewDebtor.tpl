@@ -16,12 +16,12 @@
             <a style="color: {$party_ba_references.0.color};" title="{$party_ba_references.0.reference_type_label}">{$party_ba_references.0.reference}</a>
             <a style="color: {$party_ba_references.0.color};" href="{crmURL p="civicrm/contact/view" q="reset=1&cid=$ba_contact_id"}">[{$party_ba_references.0.probability}, {$ba_contact_id}]</a>
               {if !$party_ba_references.0.contact_ok}</strike>{/if}
-              {if $iban_contact_count > 1}<i>{$iban_contact_count} matching contacts</i>{/if}
           {elseif $party_account_ref}
             <span title="{$party_account_reftypename}" class="notfound">{$party_account_ref} ({$party_account_reftype2})</span>
           {else}
             &nbsp;
           {/if}
+          {if $iban_contact_count > 1}<i>{$iban_contact_count} matching contacts</i>{/if}
 
       </div>
       <div class="btxlabel">{ts domain='org.project60.banking'}Address{/ts}</div>
